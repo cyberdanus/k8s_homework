@@ -1,0 +1,38 @@
+{
+    "kind": "Deployment",
+    "apiVersion": "apps/v1",
+    "metadata": {
+        "name": "1stlesson",
+        "creationTimestamp": null,
+        "labels": {
+            "app": "1stlesson"
+        }
+    },
+    "spec": {
+        "replicas": 2,
+        "selector": {
+            "matchLabels": {
+                "app": "1stlesson"
+            }
+        },
+        "template": {
+            "metadata": {
+                "creationTimestamp": null,
+                "labels": {
+                    "app": "1stlesson"
+                }
+            },
+            "spec": {
+                "containers": [
+                    {
+                        "name": "nginx",
+                        "image": "nginx",
+                        "resources": {}
+                    }
+                ]
+            }
+        },
+        "strategy": {}
+    },
+    "status": {}
+}
