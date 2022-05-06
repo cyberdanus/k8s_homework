@@ -7,22 +7,22 @@ deployment.apps/1stlesson created
 kubectl get pods | grep 1st
 1stlesson-78d8fc4d45-6mtfj   1/1     Running   0               52s
 1stlesson-78d8fc4d45-gljf4   1/1     Running   0               52s
-                                                                                                                                                                 
+
 kubectl delete pod 1stlesson-78d8fc4d45-6mtfj
 pod "1stlesson-78d8fc4d45-6mtfj" deleted
-                                                                                                                                                                 
+
 kubectl get pods | grep 1st
 1stlesson-78d8fc4d45-gljf4   1/1     Running             0               88s
 1stlesson-78d8fc4d45-w4bch   0/1     ContainerCreating   0               2s
-                                                                                                                                                                 
+
 kubectl get pods | grep 1st
 1stlesson-78d8fc4d45-gljf4   1/1     Running   0               89s
 1stlesson-78d8fc4d45-w4bch   1/1     Running   0               3s
-                                                                                                      
+
 kubectl create deployment 1stlesson --replicas=2 --image=nginx --dry-run=client -o json
 
-![alt tag](img/1.jpg)
-![alt tag](img/2.jpg)
+![alt tag](img/1.JPG)
+![alt tag](img/2.JPG)
 
 # Task 1.1
 Requirements:
@@ -40,7 +40,7 @@ Client Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.0", GitCom
 
 ## Setup autocomplete for kubectl
 ```bash
-source <(kubectl completion bash) 
+source <(kubectl completion bash)
 ```
 
 ```bash
