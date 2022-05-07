@@ -1,6 +1,6 @@
 # lesson1
 * Create a deployment nginx. Set up two replicas. Remove one of the pods, see what happens.
-
+```bash
 kubectl create deployment 1stlesson --replicas=2 --image=nginx
 deployment.apps/1stlesson created
 
@@ -20,7 +20,7 @@ kubectl get pods | grep 1st
 1stlesson-78d8fc4d45-w4bch   1/1     Running   0               3s
 
 kubectl create deployment 1stlesson --replicas=2 --image=nginx --dry-run=client -o json
-
+```
 ![alt tag](img/1.JPG)
 ![alt tag](img/2.JPG)
 

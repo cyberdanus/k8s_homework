@@ -1,3 +1,34 @@
+# lesson2
+* In Minikube in namespace kube-system, there are many different pods running. Your task is to figure out who creates them, and who makes sure they are running (restores them after deletion).
+
+```bash
+ kubectl -n kube-system get pods | grep - | awk {print'$1'}
+ kubectl describe pods $(kubectl -n kube-system get pods | grep - | awk {print'$1'}) -n kube-system  | grep "Controlled By"
+```
+![alt tag](img/1.JPG)
+
+* Implement Canary deployment of an application via Ingress. Traffic to canary deployment should be redirected if you add "canary: always" in the header, otherwise it should go to regular deployment.
+Set to redirect a percentage of traffic to canary deployment.
+
+In first screenshot we can see current running pod's daployments and ingress
+![alt tag](img/2.JPG)
+
+On this screenshot we can see described ingress for two difirent deployment, with complete configuration of canary deployment. Current canary-weight=0
+![alt tag](img/3.JPG)
+
+On this screenshot we can see we can see two difirent services anf those cluster ip addreses.
+![alt tag](img/4.JPG)
+
+Here we can see we can see results execution curl command to $(minicube ip) with 80 port. Without headers we go to main application, after adding "canary: always" headers all traffic goes to canary application.
+![alt tag](img/5.JPG)
+
+Now we change canary-weight to 10 in ingress-canary.yaml and apply configuration.
+![alt tag](img/6.JPG)
+
+And finaly we can see execution curl command to $(minicube ip) at 80 port without headers, with canary application.
+![alt tag](img/6.JPG)
+
+
 # Task 2
 ### ConfigMap & Secrets
 ```bash
