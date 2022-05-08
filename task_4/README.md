@@ -49,7 +49,7 @@ kubectl create rolebinding prod_admin --namespace=prod --role=prod_admin_rule --
 ![alt tag](img/4.JPG)
 * Create a serviceAccount sa-namespace-admin. Grant full rights to namespace default. Create context, authorize using the created sa, check accesses.
 ```bash
-ubectl config use-context minikube
+kubectl config use-context minikube
 
 kubectl create serviceaccount sa-namespace-admin
 kubectl create role sa-namespace-admin_rule --namespace=default --verb=* --resource=*.*
